@@ -8,7 +8,7 @@
     <title>iPortfolio</title>
 
 </head>
-<body>
+<body class="flex">
     @extends('layouts.front')
 
     @section('content')
@@ -110,29 +110,47 @@
             <img src="{{$p->img}}" alt="">
         @endforeach
     </section>
+    {{-- Services Section --}}
+    <section class="services section">
+        {{-- Section Title --}}
+        <div class="container section-title">
+            <h2>Services</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div>
+      {{-- Section Content --}}
+      @foreach ($services as $s)
+      <div class="flex">
+          <span class="{{$s->icon}}"></span>
+          <div>
+            <h1>{{$s->title}}</h1>
+            <h2>{{$s->text}}</h2>
+          </div>
+      </div>
+      @endforeach
+    </section>
     <section id="contact" class="contact section">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+      </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
 
         <div class="row gy-4">
 
           <div class="col-lg-5">
 
             <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div class="info-item">
+                <i class=""></i>
                 <div>
                   <h3>Address</h3>
                   <p>Place de la minoterie 10, 1080 Bruxelles</p>
                 </div>
               </div><!-- End Info Item -->
 
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <div class="info-item d-flex">
                 <i class="bi bi-telephone flex-shrink-0"></i>
                 <div>
                   <h3>Call Us</h3>
@@ -140,7 +158,7 @@
                 </div>
               </div><!-- End Info Item -->
 
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <div class="info-item d-flex">
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h3>Email Us</h3>
