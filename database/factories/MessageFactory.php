@@ -17,7 +17,10 @@ class MessageFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nom' => $this->faker->lastName(),
+            'email' => $this->faker->email(),
+            'sujet' => $this->faker->text(20),
+            'message' => $this->faker->text(200)
         ];
     }
 }
