@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\SkillController;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [GeneralController::class, 'index']);
 Route::get('/back', function () {
     return view('back-end.dashboard');
 });
