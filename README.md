@@ -14,7 +14,8 @@ Je ne juge pas le front a ce stade mais ça doit être cohérent et propre.
 About et Contact = modifier uniquement ;
 Skills, Portfolio, Services, Testimonials = ajouter / modifier / supprimer.
 
-Tables & colonnes:
+## Tables & colonnes:
+
 Abouts : subtitle, birthdate, website, phone, city, age, degree, email, freelance, src, subtext.
 
 Avatars (1–1 avec About) : image, FK(about_id). (donc ici avatar appartiens a about(le profil))
@@ -31,9 +32,14 @@ Contacts : street, number, city, zip, phone, email.
 
 Messages : nom, email, sujet, message
 
-Exigences techniques : migrations, seeders, factories, images via Storage public ; on doit pouvoir migrate:fresh --seed,
+### Exigences techniques:
+
+migrations, seeders, factories, images via Storage public ; on doit pouvoir migrate:fresh --seed,
 Cela siginifie que toutes les données sont seedé au départ je peux modifier comme je veux, au moindre soucis on sait toujours revenir a la version d'origine avec db:seed...
-Exigences front : une seule page avec navigation par ancres, rendu proche du template et travail soigné.
+
+### Exigences front:
+
+une seule page avec navigation par ancres, rendu proche du template et travail soigné.
 
 ## Bonus
 
