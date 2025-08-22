@@ -13,6 +13,19 @@ class AboutSeeder extends Seeder
      */
     public function run(): void
     {
-        About::factory()->count(1)->create();
+        About::insert([
+            [
+            'subtitle' => 'loremloremloremloremloremloremloremlorem',
+            'birthdate' => '29th of january 2001',
+            'website' => 'website.com',
+            'phone' => '+32 001 002 003',
+            'city' => 'Brussels',
+            'age' => '24',
+            'degree' => 'degree',
+            'email' => 'baldygakamil@gmail.com',
+            'freelance' => 'freelance status',
+            'subtext' => 'loremloremloremloremloremloremloremlorem'
+            ],
+        ]);
     }
 }
