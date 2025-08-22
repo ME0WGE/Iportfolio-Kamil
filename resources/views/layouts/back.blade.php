@@ -8,6 +8,7 @@
     <title>Back-End Blade</title>
 </head>
 <body>
+    
     {{-- Navbar --}}
     @include('partials.navbar-back')
 
@@ -16,7 +17,5 @@
         @yield('content')
     </main>
 
-    {{-- Footer --}}
-    @include('partials.footer')
 </body>
 </html>
