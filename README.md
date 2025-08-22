@@ -16,12 +16,19 @@ Skills, Portfolio, Services, Testimonials = ajouter / modifier / supprimer.
 
 Tables & colonnes:
 Abouts : subtitle, birthdate, website, phone, city, age, degree, email, freelance, src, subtext.
+
 Avatars (1–1 avec About) : image, FK(about_id). (donc ici avatar appartiens a about(le profil))
+
 Skills : skill, pourcentage.
+
 Portfolios : img, filter.
+
 Services : icon, title, text.
+
 Testimonials : comment, img, name, position.
+
 Contacts : street, number, city, zip, phone, email.
+
 Messages : nom, email, sujet, message
 
 Exigences techniques : migrations, seeders, factories, images via Storage public ; on doit pouvoir migrate:fresh --seed,
