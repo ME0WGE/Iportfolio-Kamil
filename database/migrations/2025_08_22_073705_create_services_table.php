@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->enum('icon', ['fa-display', 'fa-chart-column', 'fa-earth-europe','fa-image','fa-sliders', 'fa-calendar-days']);
-            $table->string('title', 30);
-            $table->string('text', 30);
+            $table->enum('icon', ['fa-solid fa-display', 'fa-solid fa-chart-column', 'fa-solid fa-earth-europe','fa-regular fa-image','fa-solid fa-sliders', 'fa-regular fa-calendar-days']);
+            $table->string('title');
+            $table->string('text');
             $table->timestamps();
         });
     }
