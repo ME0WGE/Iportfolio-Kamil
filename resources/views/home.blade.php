@@ -100,13 +100,13 @@
         <h1>Portfolio</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ratione iure ipsa. Aperiam ut quasi incidunt tenetur sapiente, suscipit nam perspiciatis voluptatem eligendi pariatur aliquam esse? Aperiam optio quas necessitatibus consequuntur voluptas accusamus? Sapiente ex laudantium, culpa labore vitae quo.</p>
 
-        @foreach ($portfolio as $p)
+        @foreach ($portfolios as $p)
             <ul>
                 <li><a href="#">{{$p->filter}}</a></li>
             </ul>
         @endforeach
 
-        @foreach ($portfolio as $p)
+        @foreach ($portfolios as $p)
             <img src="{{$p->img}}" alt="">
         @endforeach
     </section>
