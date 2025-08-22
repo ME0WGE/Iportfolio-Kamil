@@ -9,4 +9,6 @@ class Portfolio extends Model
 {
     /** @use HasFactory<\Database\Factories\PortfolioFactory> */
     use HasFactory;
+
+    protected $fillable = ['img', 'filter'];
 }
