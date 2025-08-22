@@ -113,7 +113,7 @@
     {{-- Services Section --}}
     <section class="services section">
         {{-- Section Title --}}
-        <div class="container section-title">
+        <div class="section-title">
             <h2>Services</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div>
@@ -128,19 +128,51 @@
       </div>
       @endforeach
     </section>
+    {{-- Testimonials Section --}}
+    <section class="testimonials section">
+      <!-- Section Title -->
+      <div class="section-title">
+        <h2>Testimonials</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div>
+      {{-- Section Content --}}
+      <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          @foreach($testimonials as $t)
+          <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="{{ $loop->index }}" @if($loop->first) class="active" aria-current="true" @endif aria-label="Slide {{ $loop->iteration }}"></button>
+          @endforeach
+        </div>
+        <div class="carousel-inner">
+          @foreach($testimonials as $t)
+          <div class="carousel-item @if($loop->first) active @endif">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img src="{{ asset($t->img) }}" class="rounded-circle mb-3" alt="{{ $t->name }}" style="width:96px;height:96px;object-fit:cover;">
+              <blockquote class="mb-2">{{ $t->comment }}</blockquote>
+              <small class="text-muted">{{ $t->name }} — {{ $t->position }}</small>
+            </div>
+          </div>
+          @endforeach
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
     <section id="contact" class="contact section">
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="section-title">
         <h2>Contact</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div>
-
+      {{-- Section Content --}}
       <div class="container">
-
         <div class="row gy-4">
-
           <div class="col-lg-5">
-
             <div class="info-wrap">
               <div class="info-item">
                 <i class=""></i>
@@ -148,7 +180,7 @@
                   <h3>Address</h3>
                   <p>Place de la minoterie 10, 1080 Bruxelles</p>
                 </div>
-              </div><!-- End Info Item -->
+              </div>
 
               <div class="info-item d-flex">
                 <i class="bi bi-telephone flex-shrink-0"></i>
@@ -156,7 +188,7 @@
                   <h3>Call Us</h3>
                   <p>+32 001 002 003</p>
                 </div>
-              </div><!-- End Info Item -->
+              </div>
 
               <div class="info-item d-flex">
                 <i class="bi bi-envelope flex-shrink-0"></i>
@@ -164,12 +196,12 @@
                   <h3>Email Us</h3>
                   <p>info@example.com</p>
                 </div>
-              </div><!-- End Info Item -->
-
+              </div>
+              {{-- iFrame --}}
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2518.6937365288773!2d4.34122!3d50.85535539999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c38c275028d3%3A0xc7799151146ebf77!2sMolenGeek!5e0!3m2!1sfr!2sbe!4v1755866306650!5m2!1sfr!2sbe" width="450" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
-
+          {{-- Contact Form --}}
           <div class="col-lg-7">
             <form action="" method="POST" id="contact-form" class="">
               <div class="">
@@ -197,17 +229,13 @@
                 <div class="columns-md">
                   <button type="submit">Send Message</button>
                 </div>
-
               </div>
             </form>
           </div>
-
         </div>
-
       </div>
-
     </section>
     @endsection
-    
+
 </body>
 </html>
