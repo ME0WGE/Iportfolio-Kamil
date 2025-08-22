@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
-            $table->string('comment', 30);
-            $table->string('image')->nullable();
-            $table->string('name', 30);
-            $table->string('position', 30);
+            $table->string('comment');
+            $table->string('img')->nullable();
+            $table->string('name');
+            $table->string('position');
             $table->timestamps();
         });
     }
