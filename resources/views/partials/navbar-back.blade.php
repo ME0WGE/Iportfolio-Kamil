@@ -1,7 +1,7 @@
 <header>
     {{-- Avatar --}}
     <div class="avatar">
-      <img src="">
+      <img src="{{}}">
     </div>
     {{-- Username --}}
     <a href="#" class="">
