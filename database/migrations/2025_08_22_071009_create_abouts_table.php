@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->string('subtitle');
-            $table->string('birthdate', 30);
-            $table->string('website', 30);
-            $table->string('phone', 30);
-            $table->string('city', 30);
+            $table->string('birthdate');
+            $table->string('website');
+            $table->string('phone');
+            $table->string('city');
             $table->unsignedSmallInteger('age');
-            $table->string('degree', 30);
-            $table->string('email', 30);
-            $table->string('freelance', 30);
+            $table->string('degree');
+            $table->string('email');
+            $table->string('freelance');
             $table->string('subtext');
             $table->timestamps();
         });
