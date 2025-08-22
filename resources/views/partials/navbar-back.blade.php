@@ -18,7 +18,7 @@
     {{-- Navbar --}}
     <nav id="navmenu" class="">
         <ul>
-            <li><a href="#contact"><i class="fa-solid fa-right-to-bracket"></i>Log out</a></li>
+            <li><a href="/"><i class="fa-solid fa-right-to-bracket"></i>Log out</a></li>
             <li><a href="#hero" class="active"><i class="fa-solid fa-home"></i>Home</a></li>
             <li><a href="#about"><i class="fa-solid fa-user"></i>About</a></li>
             <li><a href="#portfolio"><i class="fa-solid fa-book"></i>Portfolio</a></li>

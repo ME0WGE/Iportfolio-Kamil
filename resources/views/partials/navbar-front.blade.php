@@ -23,7 +23,7 @@
             <li><a href="#portfolio"><i class="fa-solid fa-book"></i>Portfolio</a></li>
             <li><a href="#services"><i class="fa-solid fa-server"></i>Services</a></li>
             <li><a href="#contact"><i class="fa-solid fa-envelope"></i>Contact</a></li>
-            <li><a href="#contact"><i class="fa-solid fa-right-to-bracket"></i>Log In</a></li>
+            <li><a href="/back"><i class="fa-solid fa-right-to-bracket"></i>Log In</a></li>
         </ul>
         {{-- Copyright --}}
         <span>copyright</span>
