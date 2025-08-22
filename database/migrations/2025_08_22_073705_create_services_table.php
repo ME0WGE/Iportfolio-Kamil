@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('icon')->nullable();
+            $table->enum('icon', ['fa-display', 'fa-chart-column', 'fa-earth-europe','fa-image','fa-sliders', 'fa-calendar-days']);
             $table->string('title', 30);
             $table->string('text', 30);
             $table->timestamps();
