@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('avatars', function (Blueprint $table) {
             $table->id();
             $table->string('image')->nullable();
-            $table->foreignId('about_id')->constrained('about')->onDelete('cascade');
+            $table->foreignId('about_id')->constrained('abouts')->onDelete('cascade');
             $table->timestamps();
         });
     }
