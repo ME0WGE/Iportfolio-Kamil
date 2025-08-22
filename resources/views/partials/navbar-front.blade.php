@@ -1,7 +1,7 @@
 <header>
     {{-- Avatar --}}
     <div class="avatar">
-      <img src="{{}}">
+      <img src="{{asset($about->avatar->image)}}">
     </div>
     {{-- Username --}}
     <a href="#" class="">

@@ -6,6 +6,7 @@ use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\SkillController;
 
 Route::get('/', [GeneralController::class, 'index']);
+
 Route::get('/back', function () {
     return view('back-end.dashboard');
 });
