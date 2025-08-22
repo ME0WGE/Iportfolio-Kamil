@@ -7,6 +7,4 @@ use App\Http\Controllers\SkillController;
 
 Route::get('/', [GeneralController::class, 'index']);
 
-Route::get('/back', function () {
-    return view('back-end.dashboard');
-});
+Route::get('/back', [GeneralController::class, 'nav_back']);

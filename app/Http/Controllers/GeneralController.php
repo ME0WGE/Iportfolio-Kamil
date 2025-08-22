@@ -36,4 +36,16 @@ class GeneralController extends Controller
 
         return view('partials.navbar-front', compact('about', 'skills', 'portfolios', 'testimonials', 'services', 'messages'));
     }
+
+    public function nav_back () {
+        $about = About::with('avatar')->first();
+        $skills = Skill::orderBy('id')->get();
+        $portfolios = Portfolio::orderBy('id')->get();
+        $testimonials = Testimonial::all();
+        $contacts = Contact::all();
+        $services = Service::all();
+        $messages = Message::all();
+
+        return view('partials.navbar-back', compact('about', 'skills', 'portfolios', 'testimonials', 'services', 'messages'));
+    }
 }
