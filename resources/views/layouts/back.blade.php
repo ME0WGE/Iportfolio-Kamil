@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>iPortfolio</title>
+    <title>Back-End Blade</title>
 </head>
 <body>
-    @extends('layouts.front')
+    {{-- Navbar --}}
+    @include('partials.navbar-back')
 
-    @section('content')
-    <h1>Homepage</h1>
-    @endsection
-    
+    {{-- Main Content --}}
+    <main>
+        @yield('content')
+    </main>
+
+    {{-- Footer --}}
+    @include('partials.footer')
 </body>
 </html>
