@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('subtitle', 30);
+            $table->string('subtitle');
             $table->string('birthdate', 30);
             $table->string('website', 30);
             $table->string('phone', 30);
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('degree', 30);
             $table->string('email', 30);
             $table->string('freelance', 30);
-            $table->string('subtext', 30);
+            $table->string('subtext');
             $table->timestamps();
         });
     }
