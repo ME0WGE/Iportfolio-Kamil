@@ -11,7 +11,20 @@ class About extends Model
     use HasFactory;
 
     protected $table = 'abouts';
-    protected $fillable =['subtitle', 'birthdate', 'website', 'phone', 'city', 'age', 'degree', 'email', 'freelance', 'subtext'];
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'subtitle',
+        'birthdate',
+        'website',
+        'phone',
+        'city',
+        'age',
+        'degree',
+        'email',
+        'freelance',
+        'subtext',
+    ];
 
     public function avatar() {
         return $this->hasOne(Avatar::class);

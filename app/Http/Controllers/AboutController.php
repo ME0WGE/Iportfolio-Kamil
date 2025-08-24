@@ -59,6 +59,8 @@ class AboutController extends Controller
     public function update(Request $request, About $about)
     {
         $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
             'subtitle' => 'required|string|max:255',
             'birthdate' => 'required|date',
             'website' => 'required|url|max:255',
@@ -72,6 +74,8 @@ class AboutController extends Controller
         ]);
 
         $about->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'subtitle' => $request->subtitle,
             'birthdate' => $request->birthdate,
             'website' => $request->website,

@@ -108,56 +108,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Recent Activity -->
-    <section class="section light-background">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title" data-aos="fade-up">
-                        <h3>Recent Messages</h3>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Subject</th>
-                                    <th>Date</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @forelse($messages->take(5) as $message)
-                                <tr>
-                                    <td>{{ $message->nom }}</td>
-                                    <td>{{ $message->email }}</td>
-                                    <td>{{ Str::limit($message->sujet, 30) }}</td>
-                                    <td>{{ $message->created_at->format('M d, Y') }}</td>
-                                    <td>
-                                        <a href="/back/messages/{{ $message->id }}" class="btn btn-sm btn-outline-primary">
-                                            <i class="bi bi-eye"></i> View
-                                        </a>
-                                    </td>
-                                </tr>
-                                @empty
-                                <tr>
-                                    <td colspan="5" class="text-center">No messages yet</td>
-                                </tr>
-                                @endforelse
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 @endsection
     
 </body>
