@@ -20,7 +20,7 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4 justify-content-center">
                 <div class="col-lg-4">
-                    <img src="{{ $about?->avatar?->image ? asset('storage/' . $about->avatar->image) : asset('img/default-avatar.jpg') }}" class="img-fluid" alt="Profile">
+                    <img src="{{ asset($about->avatar->image) }}" class="img-fluid" alt="Profile">
                 </div>
                 <div class="col-lg-8 content">
                     <h2>UI/UX Designer & Web Developer.</h2>
@@ -107,11 +107,11 @@
                     @foreach($portfolios as $portfolio)
                     <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ strtolower($portfolio->filter) }}">
                         <div class="portfolio-wrap">
-                            <img src="{{ asset('storage/'. $portfolio->img) }}" class="img-fluid" alt="{{ $portfolio->filter }}">
+                            <img src="{{ asset($portfolio->img) }}" class="img-fluid" alt="{{ $portfolio->filter }}">
                             <div class="portfolio-info">
                                 <h4>{{ $portfolio->filter }}</h4>
                                 <p>{{ $portfolio->filter }} Project</p>
-                                <a href="{{ asset('storage/' . $portfolio->img) }}" title="{{ $portfolio->filter }}" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="{{ asset($portfolio->img) }}" title="{{ $portfolio->filter }}" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div>
@@ -166,7 +166,7 @@
                                 <span>{{ $testimonial->comment }}</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
-                            <img src="{{ asset('storage/' . $testimonial->img) }}" class="testimonial-img" alt="{{ $testimonial->name }}">
+                            <img src="{{ asset($testimonial->img) }}" class="testimonial-img" alt="{{ $testimonial->name }}">
                             <h3>{{ $testimonial->name }}</h3>
                             <h4>{{ $testimonial->position }}</h4>
                         </div>

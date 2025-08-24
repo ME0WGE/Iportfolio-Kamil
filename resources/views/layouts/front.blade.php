@@ -30,6 +30,7 @@
             </div>
             <div class="credits">
                 <p>Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></p>
+                <p>Backend by Kamil Baldyga</p>
             </div>
         </div>
     </footer>

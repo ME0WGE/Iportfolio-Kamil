@@ -2,11 +2,11 @@
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <div class="profile-img">
-        <img src="{{ $about?->avatar?->image ? asset('storage/' . $about->avatar->image) : asset('img/default-avatar.jpg') }}" alt="Profile" class="img-fluid rounded-circle">
+        <img src="{{ asset($about->avatar->image) }}" alt="Profile" class="img-fluid rounded-circle">
     </div>
 
     <a href="#" class="logo d-flex align-items-center justify-content-center">
-        <h1 class="sitename">{{ $about->subtitle ?? 'Kamil Baldyga' }}</h1>
+        <h1 class="sitename">{{ 'Kamil Baldyga' }}</h1>
     </a>
 
     <div class="social-links text-center">
