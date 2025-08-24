@@ -66,7 +66,7 @@ class AvatarController extends Controller
             }
             
             // Store new image
-            $imagePath = $request->file('image')->store('avatars', 'public');
+            $imagePath = 'storage/' . $request->file('image')->store('assets', 'public');
             $avatar->update(['image' => $imagePath]);
 
             return redirect('/back/about')->with('success', 'Avatar updated successfully!');

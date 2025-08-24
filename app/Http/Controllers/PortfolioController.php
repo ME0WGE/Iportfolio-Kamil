@@ -38,7 +38,7 @@ class PortfolioController extends Controller
         ]);
 
         if ($request->hasFile('img')) {
-            $imagePath = $request->file('img')->store('portfolio', 'public');
+            $imagePath = 'storage/' . $request->file('img')->store('assets', 'public');
             
             Portfolio::create([
                 'img' => $imagePath,
@@ -86,7 +86,7 @@ class PortfolioController extends Controller
             }
             
             // Store new image
-            $imagePath = $request->file('img')->store('portfolio', 'public');
+            $imagePath = 'storage/' . $request->file('img')->store('assets', 'public');
             $data['img'] = $imagePath;
         }
 
