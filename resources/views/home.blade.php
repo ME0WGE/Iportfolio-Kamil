@@ -156,24 +156,40 @@
         </div>
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="testimonial-swiper swiper">
-                <div class="swiper-wrapper">
-                    @foreach($testimonials as $testimonial)
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @foreach($testimonials as $index => $testimonial)
+                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                        <div class="testimonial-item text-center">
+                            <p class="mb-4">
                                 <i class="bi bi-quote quote-icon-left"></i>
                                 <span>{{ $testimonial->comment }}</span>
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
-                            <img src="{{ asset($testimonial->img) }}" class="testimonial-img" alt="{{ $testimonial->name }}">
-                            <h3>{{ $testimonial->name }}</h3>
-                            <h4>{{ $testimonial->position }}</h4>
+                            <img src="{{ asset($testimonial->img) }}" class="testimonial-img rounded-circle mb-3" alt="{{ $testimonial->name }}" style="width: 80px; height: 80px; object-fit: cover;">
+                            <h3 class="mb-1">{{ $testimonial->name }}</h3>
+                            <h4 class="text-muted">{{ $testimonial->position }}</h4>
                         </div>
                     </div>
                     @endforeach
                 </div>
-                <div class="swiper-pagination"></div>
+                
+                <!-- Navigation Buttons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    @foreach($testimonials as $index => $testimonial)
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                    @endforeach
+                </div>
             </div>
         </div>
     </section>
@@ -246,7 +262,6 @@
                             </div>
 
                             <div class="col-md-12 text-center">
-
                                 <button type="submit">Send Message</button>
                             </div>
                         </div>
