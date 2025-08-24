@@ -184,14 +184,14 @@
                 </div>
                 
                 <!-- Navigation Buttons -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: rgba(30,30,30,0.85); border-radius: 50%; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: rgba(30,30,30,0.85); border-radius: 50%; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 
                 <!-- Indicators -->
                 <div class="carousel-indicators">
