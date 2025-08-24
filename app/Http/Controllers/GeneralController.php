@@ -22,7 +22,7 @@ class GeneralController extends Controller
         $services = Service::all();
         $messages = Message::all();
 
-        return view('home', compact('about', 'skills', 'portfolios', 'testimonials', 'services', 'messages'));
+        return view('home', compact('about', 'skills', 'portfolios', 'testimonials', 'contacts', 'services', 'messages'));
     }
 
     public function nav () {

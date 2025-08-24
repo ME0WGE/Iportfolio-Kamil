@@ -1,33 +1,33 @@
-<header>
-    {{-- Avatar --}}
-    <div class="avatar">
-      <img src="{{asset($about->avatar->image)}}">
+<header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+        <img src="{{ $about?->avatar?->image ? asset('storage/' . $about->avatar->image) : asset('img/default-avatar.jpg') }}" alt="Profile" class="img-fluid rounded-circle">
     </div>
-    {{-- Username --}}
-    <a href="#" class="">
-        <h1 class="username">Kamil Baldyga</h1>
+
+    <a href="#" class="logo d-flex align-items-center justify-content-center">
+        <h1 class="sitename">{{ $about->subtitle ?? 'Kamil Baldyga' }}</h1>
     </a>
 
-    <div class="social-links">
-        <a href="#" class="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="fa-solid fa-envelope"></i></a>
-        <a href="#" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+    <div class="social-links text-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
     </div>
-    {{-- Navbar --}}
-    <nav id="navmenu" class="">
+
+    <nav id="navmenu" class="navmenu">
         <ul>
-            <li><a href="#hero" class="active"><i class="fa-solid fa-home"></i>Home</a></li>
-            <li><a href="#about"><i class="fa-solid fa-user"></i>About</a></li>
-            <li><a href="#portfolio"><i class="fa-solid fa-book"></i>Portfolio</a></li>
-            <li><a href="#services"><i class="fa-solid fa-server"></i>Services</a></li>
-            <li><a href="#contact"><i class="fa-solid fa-envelope"></i>Contact</a></li>
-            <li><a href="/back"><i class="fa-solid fa-right-to-bracket"></i>Log In</a></li>
+            <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+            <li><a href="#about"><i class="bi bi-person navicon"></i>About</a></li>
+            <li><a href="#skills"><i class="bi bi-award navicon"></i>Skills</a></li>
+            <li><a href="#portfolio"><i class="bi bi-images navicon"></i>Portfolio</a></li>
+            <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i>Services</a></li>
+            <li><a href="#testimonials"><i class="bi bi-chat-quote navicon"></i>Testimonials</a></li>
+            <li><a href="#contact"><i class="bi bi-envelope navicon"></i>Contact</a></li>
+            <li><a href="/back"><i class="bi bi-gear navicon"></i>Backend</a></li>
         </ul>
-        {{-- Copyright --}}
-        <span>copyright</span>
-        <span>Kamil Baldyga</span>
     </nav>
 </header>
 {{-- Fontawesome CDN --}}

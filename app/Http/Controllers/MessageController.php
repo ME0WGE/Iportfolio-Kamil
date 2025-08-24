@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMessageRequest;
 use App\Http\Requests\UpdateMessageRequest;
 use App\Models\Message;
+use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
@@ -27,9 +28,23 @@ class MessageController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMessageRequest $request)
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'sujet' => 'required|string|max:255',
+            'message' => 'required|string|max:1000',
+        ]);
+
+        Message::create([
+            'nom' => $request->nom,
+            'email' => $request->email,
+            'sujet' => $request->sujet,
+            'message' => $request->message,
+        ]);
+
+        return redirect()->back()->with('success', 'Your message has been sent successfully!');
     }
 
     /**
