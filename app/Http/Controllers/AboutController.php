@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAboutRequest;
 use App\Http\Requests\UpdateAboutRequest;
 use App\Models\About;
+use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
@@ -43,17 +44,47 @@ class AboutController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(About $about)
+    public function edit()
     {
-        //
+        $about = About::with('avatar')->first();
+        if (!$about) {
+            return redirect('/back')->with('error', 'About information not found!');
+        }
+        return view('back-end.about.edit', compact('about'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAboutRequest $request, About $about)
+    public function update(Request $request, About $about)
     {
-        //
+        $request->validate([
+            'subtitle' => 'required|string|max:255',
+            'birthdate' => 'required|date',
+            'website' => 'required|url|max:255',
+            'phone' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'age' => 'required|integer|min:0|max:120',
+            'degree' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'freelance' => 'required|string|in:Available,Not Available,Part-time',
+            'subtext' => 'required|string|max:1000',
+        ]);
+
+        $about->update([
+            'subtitle' => $request->subtitle,
+            'birthdate' => $request->birthdate,
+            'website' => $request->website,
+            'phone' => $request->phone,
+            'city' => $request->city,
+            'age' => $request->age,
+            'degree' => $request->degree,
+            'email' => $request->email,
+            'freelance' => $request->freelance,
+            'subtext' => $request->subtext,
+        ]);
+
+        return redirect('/back')->with('success', 'About information updated successfully!');
     }
 
     /**

@@ -14,7 +14,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+        $messages = Message::orderBy('created_at', 'desc')->get();
+        return view('back-end.messages.index', compact('messages'));
     }
 
     /**
@@ -76,6 +77,7 @@ class MessageController extends Controller
      */
     public function destroy(Message $message)
     {
-        //
+        $message->delete();
+        return redirect()->back()->with('success', 'Message deleted successfully!');
     }
 }

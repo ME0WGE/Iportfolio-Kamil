@@ -6,6 +6,7 @@ use App\Http\Requests\StoreSkillRequest;
 use App\Http\Requests\UpdateSkillRequest;
 use App\Models\Skill;
 use App\Models\About;
+use Illuminate\Http\Request;
 
 class SkillController extends Controller
 {
@@ -14,7 +15,8 @@ class SkillController extends Controller
      */
     public function index()
     {
-        //
+        $skills = Skill::orderBy('id')->get();
+        return view('back-end.skills.index', compact('skills'));
     }
 
     /**
@@ -28,9 +30,19 @@ class SkillController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSkillRequest $request)
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'skill' => 'required|string|max:255',
+            'pourcentage' => 'required|integer|min:0|max:100',
+        ]);
+
+        Skill::create([
+            'skill' => $request->skill,
+            'pourcentage' => $request->pourcentage,
+        ]);
+
+        return redirect()->back()->with('success', 'Skill added successfully!');
     }
 
     /**
@@ -52,9 +64,19 @@ class SkillController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSkillRequest $request, Skill $skill)
+    public function update(Request $request, Skill $skill)
     {
-        //
+        $request->validate([
+            'skill' => 'required|string|max:255',
+            'pourcentage' => 'required|integer|min:0|max:100',
+        ]);
+
+        $skill->update([
+            'skill' => $request->skill,
+            'pourcentage' => $request->pourcentage,
+        ]);
+
+        return redirect()->back()->with('success', 'Skill updated successfully!');
     }
 
     /**
@@ -62,6 +84,7 @@ class SkillController extends Controller
      */
     public function destroy(Skill $skill)
     {
-        //
+        $skill->delete();
+        return redirect()->back()->with('success', 'Skill deleted successfully!');
     }
 }

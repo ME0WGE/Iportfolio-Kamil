@@ -2,7 +2,11 @@
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <div class="profile-img">
-        <img src="{{ asset($about->avatar->image) }}" alt="Profile" class="img-fluid rounded-circle">
+        @if(isset($about) && $about && $about->avatar)
+            <img src="{{ asset($about->avatar->image) }}" alt="Profile" class="img-fluid rounded-circle">
+        @else
+            <img src="{{ asset('img/default-avatar.jpg') }}" alt="Profile" class="img-fluid rounded-circle">
+        @endif
     </div>
 
     <a href="#" class="logo d-flex align-items-center justify-content-center">

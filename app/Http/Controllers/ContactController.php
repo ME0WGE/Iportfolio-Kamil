@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
 use App\Models\Contact;
+use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
@@ -43,17 +44,39 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Contact $contact)
+    public function edit()
     {
-        //
+        $contact = Contact::first();
+        if (!$contact) {
+            return redirect('/back')->with('error', 'Contact information not found!');
+        }
+        return view('back-end.contact.edit', compact('contact'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateContactRequest $request, Contact $contact)
+    public function update(Request $request, Contact $contact)
     {
-        //
+        $request->validate([
+            'street' => 'required|string|max:255',
+            'number' => 'required|string|max:50',
+            'city' => 'required|string|max:255',
+            'zip' => 'required|string|max:20',
+            'phone' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+        ]);
+
+        $contact->update([
+            'street' => $request->street,
+            'number' => $request->number,
+            'city' => $request->city,
+            'zip' => $request->zip,
+            'phone' => $request->phone,
+            'email' => $request->email,
+        ]);
+
+        return redirect('/back')->with('success', 'Contact information updated successfully!');
     }
 
     /**

@@ -46,6 +46,6 @@ class GeneralController extends Controller
         $services = Service::all();
         $messages = Message::all();
 
-        return view('partials.navbar-back', compact('about', 'skills', 'portfolios', 'testimonials', 'services', 'messages'));
+        return view('back-end.dashboard', compact('about', 'skills', 'portfolios', 'testimonials', 'contacts', 'services', 'messages'));
     }
 }
