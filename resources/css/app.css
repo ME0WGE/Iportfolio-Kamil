@@ -387,36 +387,69 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
+.skills .skill-item {
+  margin-bottom: 2rem;
 }
 
-.skills .progress .skill {
-  padding: 10px 0;
-  margin: 0;
-  text-transform: uppercase;
-  display: block;
+.skills .skill-name {
   font-weight: 600;
   font-family: var(--heading-font);
   color: var(--heading-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
+.skills .skill-percentage {
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
-.skills .progress-bar-wrap {
-  background: #e8edf5;
-  height: 10px;
+.skills .progress {
+  background-color: #e8edf5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .skills .progress-bar {
-  width: 1px;
-  background-color: var(--accent-color);
+  transition: width 1.5s ease-in-out;
+  border-radius: 10px;
+  position: relative;
+}
+
+.skills .progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.15) 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+
+@keyframes progress-bar-stripes {
+  0% { background-position: 20px 0; }
+  100% { background-position: 0 0; }
+}
+
+/* Custom progress bar colors for different skill levels */
+.skills .progress-bar.bg-success {
+  background: linear-gradient(45deg, #28a745, #20c997) !important;
+}
+
+.skills .progress-bar.bg-info {
+  background: linear-gradient(45deg, #17a2b8, #6f42c1) !important;
+}
+
+.skills .progress-bar.bg-warning {
+  background: linear-gradient(45deg, #ffc107, #fd7e14) !important;
+}
+
+.skills .progress-bar.bg-danger {
+  background: linear-gradient(45deg, #dc3545, #e83e8c) !important;
 }
 
 /*--------------------------------------------------------------

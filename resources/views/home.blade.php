@@ -66,14 +66,23 @@
                 $chunkSize = (int) ceil($skills->count() / 2);
                 $skillColumns = $skills->chunk($chunkSize);
             @endphp
-            <div class="row skills-content skills-animation">
+            <div class="row skills-content">
                 @foreach($skillColumns as $column)
                 <div class="col-lg-6">
                     @foreach($column as $skill)
-                    <div class="progress">
-                        <span class="skill"><span>{{ $skill->skill }}</span> <i class="val">{{ $skill->pourcentage }}%</i></span>
-                        <div class="progress-bar-wrap">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ $skill->pourcentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $skill->pourcentage }}%"></div>
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="skill-name fw-bold">{{ $skill->skill }}</span>
+                            <span class="skill-percentage text-muted">{{ $skill->pourcentage }}%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar {{ $skill->pourcentage >= 80 ? 'bg-success' : ($skill->pourcentage >= 60 ? 'bg-info' : ($skill->pourcentage >= 40 ? 'bg-warning' : 'bg-danger')) }}" 
+                                 role="progressbar" 
+                                 style="width: {{ $skill->pourcentage }}%" 
+                                 aria-valuenow="{{ $skill->pourcentage }}" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100">
+                            </div>
                         </div>
                     </div>
                     @endforeach
