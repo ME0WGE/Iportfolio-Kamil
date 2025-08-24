@@ -17,8 +17,8 @@ class ContactSeeder extends Seeder
             [
                 'street' => 'Place de la Minoterie',
                 'number' => '10',
-                'city' => 'Brussels',
-                'zip' => '1000',
+                'city' => 'Molenbeek',
+                'zip' => '1080',
                 'phone' => '+32 001 002 003',
                 'email' => 'baldygakamil@gmail.com'
             ],
