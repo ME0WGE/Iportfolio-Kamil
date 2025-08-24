@@ -15,6 +15,8 @@ class AboutSeeder extends Seeder
     {
         About::insert([
             [
+            'first_name' => 'Kamil',
+            'last_name' => 'Baldyga',
             'subtitle' => 'loremloremloremloremloremloremloremlorem',
             'birthdate' => '29th of january 2001',
             'website' => 'website.com',

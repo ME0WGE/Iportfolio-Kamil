@@ -10,7 +10,7 @@
     </div>
 
     <a href="#" class="logo d-flex align-items-center justify-content-center">
-        <h1 class="sitename">{{ 'Kamil Baldyga' }}</h1>
+        <h1 class="sitename">{{ $about->first_name . ' ' . $about->last_name | 'Kamil Baldyga' }}</h1>
     </a>
 
     <div class="social-links text-center">
