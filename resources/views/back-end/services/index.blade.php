@@ -33,8 +33,8 @@
                                             <label for="icon" class="form-label">Icon Class</label>
                                             <input type="text" class="form-control @error('icon') is-invalid @enderror" 
                                                    id="icon" name="icon" value="{{ old('icon') }}" 
-                                                   placeholder="bi bi-code-slash" required>
-                                            <small class="form-text text-muted">Use Bootstrap Icons classes (e.g., bi bi-code-slash)</small>
+                                                   placeholder="fa-solid fa-chevron-right" required>
+                                            <small class="form-text text-muted">Use Fontawesome Icons classes (e.g., fa-brands fa-linkedin)</small>
                                             @error('icon')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
